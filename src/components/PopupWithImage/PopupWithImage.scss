@@ -1,0 +1,72 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 550px;
+  width: 100%;
+  .carousel {
+    padding: 0 50px;
+  }
+  .close {
+    position: fixed;
+    left: 96%;
+    bottom: 100%;
+    background-color: Transparent;
+    cursor: pointer;
+    margin-bottom: 24px;
+    svg {
+      vertical-align: bottom;
+      path {
+        &:hover {
+          fill: #ff7e1b;
+        }
+      }
+    }
+  }
+  .previous {
+    position: fixed;
+    bottom: 55%;
+    right: 95%;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    svg {
+      vertical-align: bottom;
+    }
+    &:hover {
+      svg {
+        path {
+          stroke: #ff7e1b;
+        }
+      }
+    }
+  }
+  .next {
+    position: fixed;
+    bottom: 55%;
+    right: -5%;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    padding-right: 0;
+    svg {
+      vertical-align: bottom;
+    }
+    &:hover {
+      svg {
+        path {
+          stroke: #ff7e1b;
+        }
+      }
+    }
+  }
+  img {
+    width: 100%;
+    border-radius: 15px;
+  }
+}
