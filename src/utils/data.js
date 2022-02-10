@@ -1,18 +1,16 @@
-// import News from '../images/news.png';
 export const initialData = [
   {
     id: "1",
     supplier: "Sneaker Company",
-    name: "Fall Limited Edition Sneakers",
+    name: "Fall Limited Edition",
     description:
       "These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.",
     price: 250,
-    // image: "../images/image-product-1.jpg",
     subImages: [
-      "/images/image-product-1.jpg",
-      "/images/image-product-2.jpg",
-      "/images/image-product-3.jpg",
-      "/images/image-product-4.jpg",
+      "/images/image-product1-1.jpg",
+      "/images/image-product1-2.jpg",
+      "/images/image-product1-3.jpg",
+      "/images/image-product1-4.jpg",
     ],
     inCart: 0,
   },
@@ -21,14 +19,13 @@ export const initialData = [
     supplier: "Tropicfeel",
     name: "Canyon Natural Oat",
     description:
-      "Canyon is the all-terrain sneaker with 4-in-1 versatility: providing the benefits of aqua shoes, the comfort of sport shoes, the technical outsole materials of hiking shoes, and the styling of your favourite daily pieces.",
+      "Canyon is the all-terrain sneaker with 4-in-1 versatility: providing the benefits of aqua shoes, the comfort of sport shoes, the technical outsole materials of hiking shoes.",
     price: 210,
-    // image: "/images/shoe1.png",
     subImages: [
-      "/images/shoe1.png",
-      "/images/shoe2.png",
-      "/images/shoe3.png",
-      "/images/shoe4.png",
+      "/images/image-product2-1.png",
+      "/images/image-product2-2.png",
+      "/images/image-product2-3.png",
+      "/images/image-product2-4.png",
     ],
     inCart: 0,
   },

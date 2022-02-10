@@ -10,25 +10,8 @@ function App() {
   const [imageOpen, setImageOpen] = useState(false);
   const [cartOpen, setCartOpen] = useState(false);
   const [cartItems, setCartItems] = useState([]);
-  // const [subImages, setSubImages] = useState([]);
-  // let [index, setIndex] = useState(0);
-  // const [currentImage, setCurrentImage] = useState(subImages[index]);
   const [selectedCard, setSelectedCard] = useState(undefined);
-  // const [products, setProducts] = useState(initialData)
-
-  // console.log(initialData)
-  // let [index, setIndex] = useState(0);
-  // const [currentImage, setCurrentImage] = useState(initialData.subImages[index]);
-
-  // function handleShowImage(e) {
-  //   const targetImage = e.target;
-  //   subImages.forEach((image) => {
-  //     if (targetImage.src.endsWith(image)) {
-  //       setCurrentImage(image);
-  //     }
-  //     return;
-  //   });
-  // }
+  let [index, setIndex] = useState(0);
 
   const onAdd = (product, count) => {
     const exist = cartItems.find((x) => x.id === product.id);
@@ -43,12 +26,11 @@ function App() {
     }
   };
 
-  const onRemove = (products) => {
-    // eslint-disable-next-line array-callback-return
-    products.map((p) => {
-      setCartItems(products.filter((x) => x.id !== p.id));
-    });
+  const onRemove = (id) => {
+    const newList = cartItems.filter((item) => item.id !== id);
+    setCartItems(newList);
   };
+
 
   const handleCheckout = () => {
     setCartItems([]);
@@ -58,8 +40,7 @@ function App() {
   function handleCardClick(product) {
     setImageOpen(true);
     setSelectedCard(product);
-    // setCurrentImage(subImages[index]);
-    // setSubImages(images);
+    setIndex(0);
   }
 
   function handleCartClick() {
@@ -69,25 +50,24 @@ function App() {
   function closeAllPopups() {
     setImageOpen(false);
     setCartOpen(false);
-    setSelectedCard();
-    // setIndex(0)
   }
 
-  console.log(selectedCard)
   return (
     <div className="App">
       <Header handleCartClick={handleCartClick} cartItems={cartItems} />
       <ProductList
         initialData={initialData}
-        // onCardClick={handleCardClick}
         onAdd={onAdd}
         onCardClick={handleCardClick}
+        index={index}
+        setIndex={setIndex}
       />
       <PopupWithImage
         isOpen={imageOpen}
-        // subImages={subImages}
         product={selectedCard}
         onClose={closeAllPopups}
+        setIndex={setIndex}
+        index={index}
       />
       <PopupWithCart
         cartItems={cartItems}

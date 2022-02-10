@@ -5,17 +5,45 @@
   margin-top: 32px;
 
   &__image {
+    display: flex;
     max-width: 100%;
     width: 100%;
-    border-radius: 10px;
-    cursor: pointer;
     position: relative;
+    cursor: pointer;
+    &:hover {
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background: rgba(255, 255, 255, 0.4);
+        border-radius: 16px;
+      }
+    }
+  }
+  .active {
+    border: 2px solid #ff7e1b;
+    border-radius: 17px;
+    position: relative;
+    cursor: auto;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 16px;
+    }
   }
 }
-// .carusel__image {
-//   max-width: 100%;
-//   width: 100%;
-//   border-radius: 10px;
-//   cursor: pointer;
-//   position: relative;
+
+// .active {
+//   opacity: 0.4;
+//   &:hover {
+//     opacity: 0.4;
+//   }
 // }

@@ -13,43 +13,44 @@ function PopupWithCart({
 }) {
   const discount = 50;
 
-  const handleRemoveFromCart = () => {
-    onRemove(cartItems);
-  }
+  const handleRemoveFromCart = (id) => {
+    onRemove(id);
+  };
 
   const priceAfterDiscount = (price) => {
-    return ((price * discount) / 100).toFixed(2)
-  }
+    return ((price * discount) / 100).toFixed(2);
+  };
 
   return (
-    <Popup onClose={onClose} isOpen={isOpen} className="cart_container">
+    <Popup onClose={onClose} isOpen={isOpen} className="cart">
       <h3>Cart</h3>
-      <div>
-        {cartItems.map(({ subImages, name, price, inCart }) => (
-          <div className="cart_item">
-            <img src={subImages[0]} alt={name} />
-            <div>
-              <p>{name}</p>
-              <p>
-                {`$${priceAfterDiscount(price)} x ${inCart}`}
-                <span>
-                  {" "}
-                  {`$${priceAfterDiscount(price) * inCart}`}
-                </span>
-              </p>
+      {cartItems.length === 0 ? (
+        <p className="cart_empty">Your cart is empty.</p>
+      ) : (
+        <div className="cart_body">
+          {cartItems.map(({ subImages, name, price, inCart, id }) => (
+            <div key={id} className="cart_item">
+              <img src={subImages[0]} alt={name} />
+              <div>
+                <p>{name}</p>
+                <p>
+                  {`$${priceAfterDiscount(price)} x ${inCart}`}
+                  <span>{`$${priceAfterDiscount(price) * inCart}`}</span>
+                </p>
+              </div>
+              <button onClick={() => handleRemoveFromCart(id)}>
+                <Remove />
+              </button>
             </div>
-            <button onClick={handleRemoveFromCart}>
-              <Remove />
-            </button>
-          </div>
-        ))}
-        <Button
-          onClick={handleCheckout}
-          type="button"
-          className="cart-btn"
-          content="Checkout"
-        />
-      </div>
+          ))}
+          <Button
+            onClick={handleCheckout}
+            type="button"
+            className="cart_btn"
+            content="Checkout"
+          />
+        </div>
+      )}
     </Popup>
   );
 }

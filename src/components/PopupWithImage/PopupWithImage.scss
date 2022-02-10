@@ -14,9 +14,6 @@
     position: fixed;
     left: 96%;
     bottom: 100%;
-    background-color: Transparent;
-    cursor: pointer;
-    margin-bottom: 24px;
     svg {
       vertical-align: bottom;
       path {
@@ -29,7 +26,7 @@
   .previous {
     position: fixed;
     bottom: 55%;
-    right: 95%;
+    right: 96%;
     width: 56px;
     height: 56px;
     border-radius: 50%;
@@ -48,7 +45,7 @@
   .next {
     position: fixed;
     bottom: 55%;
-    right: -5%;
+    right: -6%;
     width: 56px;
     height: 56px;
     border-radius: 50%;

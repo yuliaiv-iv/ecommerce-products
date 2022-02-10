@@ -6,16 +6,17 @@ import { Cart } from "../Icons/Cart";
 import Profile from "../../images/image-avatar.png";
 
 function Header({ handleCartClick, cartItems }) {
-
-let total = 0;
-cartItems.forEach(item => {
-  return total += item.inCart
-});
+  let total = 0;
+  cartItems.forEach((item) => {
+    return (total += item.inCart);
+  });
 
   return (
     <header className="header">
       <nav>
-        <img src={logo} alt="company logo" />
+        <a href="/" className="logo">
+          <img src={logo} alt="company logo" />
+        </a>
         <ul>
           {navigation.map(({ text, path }) => (
             <li key={text}>
@@ -27,9 +28,9 @@ cartItems.forEach(item => {
       <div className="header__profile">
         <button onClick={handleCartClick}>
           <Cart />
-          <span>{total}</span>
+          {total === 0 ? null : <span className="header_total">{total}</span>}
         </button>
-        <img src={Profile} alt="user avatar" />
+        <img src={Profile} alt="user avatar"/>
       </div>
     </header>
   );

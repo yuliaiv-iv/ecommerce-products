@@ -8,9 +8,7 @@ p {
 
 button {
   border: none;
-  outline: none;
   cursor: pointer;
-  padding: 0;
 }
 
 img,
@@ -42,8 +40,12 @@ button {
   padding: 0;
   background: transparent;
   font-size: 16px;
-  line-height: 16px;
+  line-height: 20px;
   font-weight: 700;
   color: #ffffff;
   border-radius: 10px;
+  font-family: "Kumbh Sans";
+  font-style: normal;
+  font-weight: bold;
+  height: 56px;
 }

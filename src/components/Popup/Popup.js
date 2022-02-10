@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "./Popup.scss";
 
-function Popup({ onClose, isOpen, className, children, type }) {
+function Popup({ onClose, isOpen, className, children }) {
   function handleEsc(event) {
     if (event.key !== "Escape") {
       return;
@@ -23,7 +23,7 @@ function Popup({ onClose, isOpen, className, children, type }) {
 
   return (
     <section
-      className={`popup popup_${type} ${isOpen ? "popup_open" : ""}`}
+      className={`popup ${isOpen ? "popup_open" : ""}`}
       onMouseDown={handleOverlayClose}
     >
       <div className={className}>{children}</div>
