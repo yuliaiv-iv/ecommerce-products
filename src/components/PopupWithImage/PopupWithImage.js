@@ -8,7 +8,12 @@ import { CloseBtn } from "../Icons/CloseBtn";
 function PopupWithImage({ onClose, isOpen, product, setIndex, index }) {
   return (
     <Popup onClose={onClose} isOpen={isOpen} className="container">
-      <Button type="button" className="close" onClick={onClose}>
+      <Button
+        type="button"
+        className="close"
+        onClick={onClose}
+        title="close popup"
+      >
         <CloseBtn />
       </Button>
       {isOpen && (

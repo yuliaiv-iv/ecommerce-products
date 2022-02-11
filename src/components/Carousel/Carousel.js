@@ -74,10 +74,20 @@ function Carousel({
     <div>
       {isOpen ? (
         <>
-          <Button type="button" className=" btn previous" onClick={moveToPrevSlide}>
+          <Button
+            type="button"
+            className="btn previous"
+            title="Show previous image"
+            onClick={moveToPrevSlide}
+          >
             <Previous />
           </Button>
-          <Button type="button" className=" btn next" onClick={moveToNextSlide}>
+          <Button
+            type="button"
+            className="btn next"
+            title="Show next image"
+            onClick={moveToNextSlide}
+          >
             <Next />
           </Button>
         </>

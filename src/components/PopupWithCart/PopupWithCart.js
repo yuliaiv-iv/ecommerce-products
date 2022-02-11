@@ -38,7 +38,10 @@ function PopupWithCart({
                   <span>{`$${priceAfterDiscount(price) * inCart}`}</span>
                 </p>
               </div>
-              <button onClick={() => handleRemoveFromCart(id)}>
+              <button
+                onClick={() => handleRemoveFromCart(id)}
+                title="remove item"
+              >
                 <Remove />
               </button>
             </div>

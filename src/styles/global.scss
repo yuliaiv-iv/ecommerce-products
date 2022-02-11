@@ -1,9 +1,39 @@
+@import "./variables";
 h1,
 h2,
 h3,
 h4,
 p {
   margin: 0;
+  font-family: "Kumbh Sans";
+}
+
+p {
+  font-size: 16px;
+  line-height: 26px;
+  color: $DarkGrey;
+}
+
+h1 {
+  font-size: 44px;
+  line-height: 48px;
+  color: $TextDark;
+}
+
+h2 {
+  font-size: 28px;
+  line-height: 28px;
+  color: $TextDark;
+}
+
+h3 {
+  font-size: 16px;
+  line-height: 28px;
+}
+
+h4 {
+  font-size: 13px;
+  line-height: 13px;
 }
 
 button {
@@ -13,7 +43,7 @@ button {
   background: transparent;
   font-size: 16px;
   line-height: 20px;
-  color: #ffffff;
+  color: $PrimaryWhite;
   border-radius: 10px;
   font-family: "Kumbh Sans";
   font-style: normal;
@@ -38,13 +68,20 @@ ul {
 
 a {
   text-decoration: none;
-  color: #69707d;
+  color: $DarkGrey;
   &:hover {
-    color: #1d2026;
+    color: $TextDark;
   }
 }
 
 svg {
   cursor: pointer;
+}
+
+
+@media screen and (max-width: 1031px) {
+  h1 {
+    font-size: 36px;
+  }
 }
 

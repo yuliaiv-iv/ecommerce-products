@@ -46,21 +46,23 @@ function Product({ index, product, onAdd, onProductClick, setIndex }) {
           <h2>{`$${finalPrice.toFixed(2)}`}</h2>
           <h3>{`${discount}%`}</h3>
         </div>
-        <h3 className="price__origin">{`$${product.price.toFixed(2)}`}</h3>
+        <h3 className="price_origin">{`$${product.price.toFixed(2)}`}</h3>
         <div className="action">
           <div className="counter">
             <Button
               className="counter_btn"
               type="button"
               onClick={handleRemoveCount}
+              title="decrement item"
             >
               <Minus />
             </Button>
-            <p>{count}</p>
+            <h3>{count}</h3>
             <Button
               className="counter_btn"
               type="button"
               onClick={handleAddCount}
+              title="increment item"
             >
               <Plus />
             </Button>
