@@ -14,7 +14,7 @@ function Header({ handleCartClick, cartItems }) {
   return (
     <header className="header">
       <nav>
-        <a href="/" className="logo">
+        <a href="/" className="header_logo">
           <img src={logo} alt="company logo" />
         </a>
         <ul>
@@ -25,12 +25,12 @@ function Header({ handleCartClick, cartItems }) {
           ))}
         </ul>
       </nav>
-      <div className="header__profile">
+      <div className="header_profile">
         <button onClick={handleCartClick}>
           <Cart />
           {total === 0 ? null : <span className="header_total">{total}</span>}
         </button>
-        <img src={Profile} alt="user avatar"/>
+        <img src={Profile} alt="user avatar" />
       </div>
     </header>
   );

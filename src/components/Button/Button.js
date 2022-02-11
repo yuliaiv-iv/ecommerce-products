@@ -1,6 +1,6 @@
 import React from "react";
 
-function Button({ children, type, content, onClick, className}) {
+function Button({ children, type, content, onClick, className }) {
   return (
     <button type={type} onClick={onClick} className={className}>
       {children}

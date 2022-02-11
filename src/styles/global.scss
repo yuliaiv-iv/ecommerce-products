@@ -9,6 +9,16 @@ p {
 button {
   border: none;
   cursor: pointer;
+  padding: 0;
+  background: transparent;
+  font-size: 16px;
+  line-height: 20px;
+  color: #ffffff;
+  border-radius: 10px;
+  font-family: "Kumbh Sans";
+  font-style: normal;
+  font-weight: bold;
+  height: 56px;
 }
 
 img,
@@ -28,24 +38,13 @@ ul {
 
 a {
   text-decoration: none;
+  color: #69707d;
+  &:hover {
+    color: #1d2026;
+  }
 }
 
 svg {
   cursor: pointer;
 }
 
-button {
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  background: transparent;
-  font-size: 16px;
-  line-height: 20px;
-  font-weight: 700;
-  color: #ffffff;
-  border-radius: 10px;
-  font-family: "Kumbh Sans";
-  font-style: normal;
-  font-weight: bold;
-  height: 56px;
-}

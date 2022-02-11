@@ -4,3 +4,9 @@
   align-items: center;
   justify-content: space-between;
 }
+
+@mixin itemPosition($position, $top, $right) {
+  position: $position;
+  top: $top;
+  right: $right;
+}

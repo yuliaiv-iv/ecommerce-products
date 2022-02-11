@@ -1,10 +1,10 @@
+@import "../../styles/variables";
+@import "../../styles/mixin";
+
 .container {
-  display: flex;
-  flex-direction: column;
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  @include flexContainer(column);
+  @include itemPosition(fixed, 50%, 50%);
+  transform: translate(50%, -50%);
   max-width: 550px;
   width: 100%;
   .carousel {
@@ -15,52 +15,34 @@
     left: 96%;
     bottom: 100%;
     svg {
-      vertical-align: bottom;
       path {
         &:hover {
-          fill: #ff7e1b;
+          fill: $PrimaryOrange;
+        }
+      }
+    }
+  }
+  .btn {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    svg {
+      vertical-align: bottom;
+    }
+    &:hover {
+      svg {
+        path {
+          stroke: $PrimaryOrange;
         }
       }
     }
   }
   .previous {
-    position: fixed;
-    bottom: 55%;
-    right: 96%;
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    background-color: #ffffff;
-    svg {
-      vertical-align: bottom;
-    }
-    &:hover {
-      svg {
-        path {
-          stroke: #ff7e1b;
-        }
-      }
-    }
+    @include itemPosition(fixed, 35%, 96%);
   }
   .next {
-    position: fixed;
-    bottom: 55%;
-    right: -6%;
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    background-color: #ffffff;
-    padding-right: 0;
-    svg {
-      vertical-align: bottom;
-    }
-    &:hover {
-      svg {
-        path {
-          stroke: #ff7e1b;
-        }
-      }
-    }
+    @include itemPosition(fixed, 35%, -6%);
   }
   img {
     width: 100%;

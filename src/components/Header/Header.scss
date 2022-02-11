@@ -1,4 +1,5 @@
 @import "../../styles/mixin";
+@import "../../styles/variables";
 
 .header {
   @include flexContainer(row);
@@ -9,7 +10,7 @@
   border-bottom: solid 1px #e4e9f2;
 
   &_total {
-    background-color: #ff7e1b;
+    background-color: $PrimaryOrange;
     font-weight: bold;
     font-size: 10px;
     line-height: 12px;
@@ -23,7 +24,7 @@
   nav {
     @include flexContainer(row);
     min-width: 590px;
-    .logo {
+    &_logo {
       &:hover {
         border-bottom: none;
         padding-bottom: 0;
@@ -33,17 +34,15 @@
       margin-left: 30px;
     }
     a {
-      color: #69707d;
       &:hover {
-        color: #1d2026;
-        border-bottom: solid 4px #ff7e1b;
+        border-bottom: solid 4px $PrimaryOrange;
         padding-bottom: 42px;
         position: relative;
       }
     }
   }
 
-  &__profile {
+  &_profile {
     @include flexContainer(row);
     svg {
       vertical-align: bottom;

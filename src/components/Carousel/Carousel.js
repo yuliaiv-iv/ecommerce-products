@@ -6,7 +6,7 @@ import Button from "../Button/Button";
 
 function Carousel({
   product,
-  onCardClick,
+  onProductClick,
   isOpen,
   index,
   setIndex,
@@ -16,17 +16,16 @@ function Carousel({
   const mainImgRef = useRef(null);
   const subImgRef = useRef(null);
 
-  const useInitialfocus = (ref, title) => {
+  const useInitialfocus = (ref) => {
     useEffect(() => {
       ref.current.focus();
-      document.title = title;
-    }, [ref, title]);
+    }, [ref]);
   };
 
-  useInitialfocus(mainImgRef, currentImage);
-  useInitialfocus(subImgRef, currentImage);
+  useInitialfocus(mainImgRef);
+  useInitialfocus(subImgRef);
 
-  function handleShowImage(e) {
+  function handleChangeMainImage(e) {
     const targetImage = e.target;
     product.subImages.forEach((image, i) => {
       if (targetImage.firstChild.src.endsWith(image)) {
@@ -37,16 +36,16 @@ function Carousel({
     });
   }
 
-  function handleClick() {
-    onCardClick(product);
+  function handleProductClick() {
+    onProductClick(product);
   }
 
-  function handleImageClick() {
-    onCardClick(product);
+  function handleImageOnPress() {
+    onProductClick(product);
   }
 
-  function handleSubImageClick(e) {
-    handleShowImage(e)
+  function handleSubImageonPress(e) {
+    handleChangeMainImage(e);
   }
 
   function moveToNextSlide() {
@@ -75,10 +74,10 @@ function Carousel({
     <div>
       {isOpen ? (
         <>
-          <Button type="button" className="previous" onClick={moveToPrevSlide}>
+          <Button type="button" className=" btn previous" onClick={moveToPrevSlide}>
             <Previous />
           </Button>
-          <Button type="button" className="next" onClick={moveToNextSlide}>
+          <Button type="button" className=" btn next" onClick={moveToNextSlide}>
             <Next />
           </Button>
         </>
@@ -88,21 +87,21 @@ function Carousel({
         tabIndex="0"
         ref={mainImgRef}
         alt={product.name}
-        onClick={isOpen ? null : handleClick}
+        onClick={isOpen ? null : handleProductClick}
         className={className}
-        onKeyPress={isOpen ? null : handleImageClick}
+        onKeyPress={isOpen ? null : handleImageOnPress}
       />
       <div className="carousel">
         {product.subImages.map((item) => (
           <div
-            className={`carousel__image ${
-              currentImage === item ? "active" : ""
+            className={`carousel_image ${
+              currentImage === item ? "active " : ""
             }`}
             key={item}
-            onClick={handleShowImage}
+            onClick={handleChangeMainImage}
             ref={subImgRef}
             tabIndex="0"
-            onKeyPress={handleSubImageClick}
+            onKeyPress={handleSubImageonPress}
           >
             <img src={item} alt={product.name} />
           </div>

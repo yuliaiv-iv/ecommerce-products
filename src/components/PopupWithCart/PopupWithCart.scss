@@ -1,8 +1,8 @@
 @import "../../styles/mixin";
+@import "../../styles/variables";
+
 .cart {
-  position: absolute;
-  top: 105px;
-  right: 90px;
+  @include itemPosition(absolute, 105px, 90px);
   width: calc(360px - 24px * 2);
   padding: 24px 24px 0;
   box-shadow: 0 20px 50px -20px rgb(29, 32, 38);
@@ -28,10 +28,10 @@
   }
 
   &_btn {
-    background: #ff7e1b;
+    background: $PrimaryOrange;
     width: 100%;
     &:hover {
-      background: #FFAB6A;
+      background: $SecondaryOrange;
     }
   }
 

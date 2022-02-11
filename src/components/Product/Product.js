@@ -5,13 +5,7 @@ import { Cart } from "../Icons/Cart";
 import { Minus } from "../Icons/Minus";
 import { Plus } from "../Icons/Plus";
 
-function Product({
-  index,
-  product,
-  onAdd,
-  onCardClick,
-  setIndex,
-}) {
+function Product({ index, product, onAdd, onProductClick, setIndex }) {
   const [count, setCount] = useState(0);
 
   const discount = 50;
@@ -40,7 +34,7 @@ function Product({
     <li>
       <Carousel
         product={product}
-        onCardClick={onCardClick}
+        onProductClick={onProductClick}
         index={index}
         setIndex={setIndex}
       ></Carousel>

@@ -3,9 +3,8 @@ import "./ProductList.scss";
 import Product from "../Product/Product";
 
 function ProductList({
-  onCardClick,
+  onProductClick,
   initialData,
-  handleCardClick,
   onAdd,
   index,
   setIndex,
@@ -16,10 +15,9 @@ function ProductList({
         {initialData.map((product) => (
           <Product
             key={product.id}
-            handleCardClick={handleCardClick}
             onAdd={onAdd}
             product={product}
-            onCardClick={onCardClick}
+            onProductClick={onProductClick}
             index={index}
             setIndex={setIndex}
           />

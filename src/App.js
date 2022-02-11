@@ -11,14 +11,16 @@ function App() {
   const [cartOpen, setCartOpen] = useState(false);
   const [cartItems, setCartItems] = useState([]);
   const [selectedCard, setSelectedCard] = useState(undefined);
-  let [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(0);
 
   const onAdd = (product, count) => {
-    const exist = cartItems.find((x) => x.id === product.id);
+    const exist = cartItems.find((item) => item.id === product.id);
     if (exist) {
       setCartItems(
-        cartItems.map((x) =>
-          x.id === product.id ? { ...exist, inCart: exist.inCart + count } : x
+        cartItems.map((item) =>
+          item.id === product.id
+            ? { ...exist, inCart: exist.inCart + count }
+            : item
         )
       );
     } else {
@@ -27,17 +29,15 @@ function App() {
   };
 
   const onRemove = (id) => {
-    const newList = cartItems.filter((item) => item.id !== id);
-    setCartItems(newList);
+    setCartItems(cartItems.filter((item) => item.id !== id));
   };
-
 
   const handleCheckout = () => {
     setCartItems([]);
     setCartOpen(false);
   };
 
-  function handleCardClick(product) {
+  function handleProductClick(product) {
     setImageOpen(true);
     setSelectedCard(product);
     setIndex(0);
@@ -54,11 +54,14 @@ function App() {
 
   return (
     <div className="App">
-      <Header handleCartClick={handleCartClick} cartItems={cartItems} />
+      <Header 
+        handleCartClick={handleCartClick}
+        cartItems={cartItems} 
+      />
       <ProductList
         initialData={initialData}
         onAdd={onAdd}
-        onCardClick={handleCardClick}
+        onProductClick={handleProductClick}
         index={index}
         setIndex={setIndex}
       />

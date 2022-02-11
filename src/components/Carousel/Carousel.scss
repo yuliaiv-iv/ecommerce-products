@@ -1,10 +1,13 @@
+@import "../../styles/mixin";
+@import "../../styles/variables";
+
 .carousel {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
   gap: 0 20px;
   margin-top: 32px;
 
-  &__image {
+  &_image {
     display: flex;
     max-width: 100%;
     width: 100%;
@@ -13,9 +16,7 @@
     &:hover {
       &::after {
         content: '';
-        position: absolute;
-        top: 0;
-        right: 0;
+        @include itemPosition(absolute, 0, 0);
         left: 0;
         bottom: 0;
         background: rgba(255, 255, 255, 0.4);
@@ -24,15 +25,13 @@
     }
   }
   .active {
-    border: 2px solid #ff7e1b;
+    border: 2px solid $PrimaryOrange;
     border-radius: 17px;
     position: relative;
     cursor: auto;
     &::after {
       content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
+      @include itemPosition(absolute, 0, 0);
       left: 0;
       bottom: 0;
       background: rgba(255, 255, 255, 0.7);
@@ -40,10 +39,3 @@
     }
   }
 }
-
-// .active {
-//   opacity: 0.4;
-//   &:hover {
-//     opacity: 0.4;
-//   }
-// }
