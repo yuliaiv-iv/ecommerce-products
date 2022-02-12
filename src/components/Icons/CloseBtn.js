@@ -1,8 +1,10 @@
-export const CloseBtn = () => {
+export const CloseBtn = ({ className, onClick }) => {
   return (
     <svg
       width={20}
       height={20}
+      className={className}
+      onClick={onClick}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >

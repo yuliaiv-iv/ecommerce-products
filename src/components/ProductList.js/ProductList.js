@@ -2,13 +2,7 @@ import React from "react";
 import "./ProductList.scss";
 import Product from "../Product/Product";
 
-function ProductList({
-  onProductClick,
-  initialData,
-  onAdd,
-  index,
-  setIndex,
-}) {
+function ProductList({ onProductClick, initialData, onAdd, index, setIndex }) {
   return (
     <main>
       <ul>

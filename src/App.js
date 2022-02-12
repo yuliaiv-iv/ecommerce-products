@@ -9,6 +9,7 @@ import { initialData } from "./utils/data";
 function App() {
   const [imageOpen, setImageOpen] = useState(false);
   const [cartOpen, setCartOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const [cartItems, setCartItems] = useState([]);
   const [selectedCard, setSelectedCard] = useState(undefined);
   const [index, setIndex] = useState(0);
@@ -50,13 +51,17 @@ function App() {
   function closeAllPopups() {
     setImageOpen(false);
     setCartOpen(false);
+    setMenuOpen(false);
   }
 
   return (
     <div className="App">
-      <Header 
+      <Header
         handleCartClick={handleCartClick}
-        cartItems={cartItems} 
+        cartItems={cartItems}
+        isOpen={menuOpen}
+        setMenuOpen={setMenuOpen}
+        onClose={closeAllPopups}
       />
       <ProductList
         initialData={initialData}

@@ -3,6 +3,7 @@ import "./Carousel.scss";
 import { Next } from "../Icons/Next";
 import { Previous } from "../Icons/Previous";
 import Button from "../Button/Button";
+import { useWindowSize } from "../../hooks/useWindowSize";
 
 function Carousel({
   product,
@@ -24,6 +25,9 @@ function Carousel({
 
   useInitialfocus(mainImgRef);
   useInitialfocus(subImgRef);
+
+  const windowSize = useWindowSize();
+  const resolution = windowSize <= 725;
 
   function handleChangeMainImage(e) {
     const targetImage = e.target;
@@ -72,8 +76,8 @@ function Carousel({
 
   return (
     <div>
-      {isOpen ? (
-        <>
+      <div className="main_image">
+        {isOpen || resolution ? (
           <Button
             type="button"
             className="btn previous"
@@ -82,6 +86,17 @@ function Carousel({
           >
             <Previous />
           </Button>
+        ) : null}
+        <img
+          src={currentImage}
+          tabIndex="0"
+          ref={mainImgRef}
+          alt={product.name}
+          onClick={isOpen || resolution ? null : handleProductClick}
+          className={className}
+          onKeyPress={isOpen ? null : handleImageOnPress}
+        />
+        {isOpen || resolution ? (
           <Button
             type="button"
             className="btn next"
@@ -90,33 +105,26 @@ function Carousel({
           >
             <Next />
           </Button>
-        </>
-      ) : null}
-      <img
-        src={currentImage}
-        tabIndex="0"
-        ref={mainImgRef}
-        alt={product.name}
-        onClick={isOpen ? null : handleProductClick}
-        className={className}
-        onKeyPress={isOpen ? null : handleImageOnPress}
-      />
-      <div className="carousel">
-        {product.subImages.map((item) => (
-          <div
-            className={`carousel_image ${
-              currentImage === item ? "active " : ""
-            }`}
-            key={item}
-            onClick={handleChangeMainImage}
-            ref={subImgRef}
-            tabIndex="0"
-            onKeyPress={handleSubImageonPress}
-          >
-            <img src={item} alt={product.name} />
-          </div>
-        ))}
+        ) : null}
       </div>
+      {resolution ? null : (
+        <div className="carousel">
+          {product.subImages.map((item) => (
+            <div
+              className={`carousel_image ${
+                currentImage === item ? "active " : ""
+              }`}
+              key={item}
+              onClick={handleChangeMainImage}
+              ref={subImgRef}
+              tabIndex="0"
+              onKeyPress={handleSubImageonPress}
+            >
+              <img src={item} alt={product.name} />
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

@@ -4,7 +4,7 @@ export const initialData = [
     supplier: "Sneaker Company",
     name: "Fall Limited Edition",
     description:
-      "These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.",
+      "These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything weather can offer.",
     price: 250,
     subImages: [
       "/images/image-product1-1.jpg",

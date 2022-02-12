@@ -38,15 +38,17 @@ function Product({ index, product, onAdd, onProductClick, setIndex }) {
         index={index}
         setIndex={setIndex}
       ></Carousel>
-      <div>
+      <div className="product">
         <h4>{product.supplier}</h4>
         <h1>{product.name}</h1>
         <p>{product.description}</p>
         <div className="price">
-          <h2>{`$${finalPrice.toFixed(2)}`}</h2>
-          <h3>{`${discount}%`}</h3>
+          <div>
+            <h2>{`$${finalPrice.toFixed(2)}`}</h2>
+            <h3 className="price_discount">{`${discount}%`}</h3>
+          </div>
+          <h3 className="price_origin">{`$${product.price.toFixed(2)}`}</h3>
         </div>
-        <h3 className="price_origin">{`$${product.price.toFixed(2)}`}</h3>
         <div className="action">
           <div className="counter">
             <Button

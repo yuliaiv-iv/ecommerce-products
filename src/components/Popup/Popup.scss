@@ -8,11 +8,12 @@
   justify-content: center;
   opacity: 0;
   visibility: hidden;
-  transition: visibility 0.2s, opacity 0.2s linear;
+  transition: visibility 0s, opacity 0s linear;
 
   &_open {
     visibility: visible;
     opacity: 1;
-    transition: visibility 0s, opacity 0.2s linear;
+    transition: visibility 0s, opacity 0s linear;
+    z-index: 1;
   }
 }

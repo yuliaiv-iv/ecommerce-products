@@ -22,28 +22,6 @@
       }
     }
   }
-  .btn {
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    background-color: $PrimaryWhite;
-    svg {
-      vertical-align: bottom;
-    }
-    &:hover {
-      svg {
-        path {
-          stroke: $PrimaryOrange;
-        }
-      }
-    }
-  }
-  .previous {
-    @include itemPosition(fixed, 35%, 96%);
-  }
-  .next {
-    @include itemPosition(fixed, 35%, -6%);
-  }
   img {
     width: 100%;
     border-radius: 15px;
