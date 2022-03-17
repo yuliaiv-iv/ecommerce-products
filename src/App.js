@@ -3,8 +3,8 @@ import Header from "./components/Header/Header";
 import PopupWithCart from "./components/PopupWithCart/PopupWithCart";
 import PopupWithImage from "./components/PopupWithImage/PopupWithImage";
 import ProductList from "./components/ProductList.js/ProductList";
-import "./styles/global.scss";
 import { initialData } from "./utils/data";
+import "./styles/global.scss";
 
 function App() {
   const [imageOpen, setImageOpen] = useState(false);
@@ -14,7 +14,7 @@ function App() {
   const [selectedCard, setSelectedCard] = useState(undefined);
   const [index, setIndex] = useState(0);
 
-  const onAdd = (product, count) => {
+  function onAdd(product, count) {
     const exist = cartItems.find((item) => item.id === product.id);
     if (exist) {
       setCartItems(
@@ -29,11 +29,11 @@ function App() {
     }
   };
 
-  const onRemove = (id) => {
+  function onRemove(id) {
     setCartItems(cartItems.filter((item) => item.id !== id));
   };
 
-  const handleCheckout = () => {
+  function handleCheckout() {
     setCartItems([]);
     setCartOpen(false);
   };

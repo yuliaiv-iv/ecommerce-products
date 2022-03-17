@@ -13,11 +13,11 @@ function PopupWithCart({
 }) {
   const discount = 50;
 
-  const handleRemoveFromCart = (id) => {
+  function handleRemoveFromCart(id) {
     onRemove(id);
   };
 
-  const priceAfterDiscount = (price) => {
+  function priceAfterDiscount (price) {
     return ((price * discount) / 100).toFixed(2);
   };
 

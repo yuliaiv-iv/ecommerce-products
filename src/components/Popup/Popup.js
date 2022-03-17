@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import "./Popup.scss";
 
 function Popup({ onClose, isOpen, className, children }) {
+
   function handleEsc(event) {
     if (event.key !== "Escape") {
       return;
@@ -14,7 +15,7 @@ function Popup({ onClose, isOpen, className, children }) {
     return () => document.removeEventListener("keydown", handleEsc);
   }, [isOpen]);
 
-  const handleOverlayClose = (event) => {
+  function handleOverlayClose (event) {
     if (event.target === event.currentTarget && isOpen) {
       onClose();
     }

@@ -17,7 +17,7 @@ function Carousel({
   const mainImgRef = useRef(null);
   const subImgRef = useRef(null);
 
-  const useInitialfocus = (ref) => {
+  function useInitialfocus(ref) {
     useEffect(() => {
       ref.current.focus();
     }, [ref]);

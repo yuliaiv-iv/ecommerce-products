@@ -4,7 +4,6 @@
 .header {
   @include flexContainer(row);
   width: calc(100% - 165px * 2);
-  // margin: auto;
   padding: 0 165px;
   height: 112px;
   position: relative;
@@ -106,10 +105,20 @@ button {
         flex-direction: column;
         height: 100vh;
         background-color: $PrimaryWhite;
+        padding-left: 25px;
+        padding-top: 25px;
+        svg {
+          margin-bottom: 54px;
+        }
         li {
           margin-left: 0;
+          margin-bottom: 20px;
         }
         a {
+          font-weight: bold;
+          font-size: 18px;
+          line-height: 26px;
+          color: $TextDark;
           &:hover {
             border-bottom: none;
             padding-bottom: 0;
@@ -124,23 +133,5 @@ button {
   .header {
     width: calc(100% - 16px * 2);
     padding: 0 16px;
-    nav {
-      ul {
-        padding-left: 25px;
-        padding-top: 25px;
-        svg {
-          margin-bottom: 54px;
-        }
-        li {
-          margin-bottom: 20px;
-          a {
-            font-weight: bold;
-            font-size: 18px;
-            line-height: 26px;
-            color: $TextDark;
-          }
-        }
-      }
-    }
   }
 }
